@@ -1,0 +1,159 @@
+.root{
+    background-color: rgb(98, 199, 98);
+    display: flex;
+    flex-direction: column;
+    max-width: 1920px;
+    
+    
+}
+
+
+.title{
+    margin-left:  100px ;
+    text-align: center;
+}
+.rules{
+    box-shadow: 20px;
+    margin: 0 auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1px;
+    gap: 20px;
+    width: 500px;
+ 
+    
+}
+
+    .indtemp {
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: 
+            radial-gradient(closest-side, rgb(228, 207, 207) 79%, transparent 80% 100%),
+            conic-gradient(rgb(235, 27, 37) 20%, rgb(238, 236, 236) 0);    
+        }
+    .indtemp::before {
+        content: "2℃";
+    }
+    .indwet {
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;      
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: 
+                radial-gradient(closest-side, rgb(228, 207, 207) 79%, transparent 80% 100%),
+                conic-gradient(rgb(235, 27, 37) 20%, rgb(238, 236, 236) 0);    
+            }
+    .indwet::before {
+        content: "20%";
+    }
+    .button__pump {
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+        text-align: center;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;      
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: 
+            radial-gradient(closest-side, rgb(228, 207, 207) 79%, transparent 80% 100%),
+            conic-gradient(rgb(235, 27, 37) 0, rgb(4, 161, 25) 0); 
+        }
+.button__pump::before {
+    content: "";
+}
+    .indlight {
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;      
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: 
+                radial-gradient(closest-side, rgb(228, 207, 207) 79%, transparent 80% 100%),
+                conic-gradient(rgb(235, 27, 37) 20%, rgb(238, 236, 236) 0);    
+            }
+    .indlight::before {
+        content: "20%";
+    }
+
+
+    .button__window {
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;      
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        cursor: pointer;
+        background: 
+            radial-gradient(closest-side, rgb(228, 207, 207) 79%, transparent 80% 100%),
+            conic-gradient(rgb(235, 27, 37) 0, rgb(4, 161, 25) 0); 
+        }
+.button__window::before {
+    content: "";
+}
+    .dom {
+        
+        height: 55px; 
+        width: 100px; 
+        margin: 35px 20px 0 0;
+        background: #B1BA5C;
+        position: relative;
+        }
+        .dom:before {
+        content: "";
+        height: 0; 
+        width: 0;
+        position: absolute; 
+        left: 0; 
+        top: -35px;
+        border-bottom: 35px solid #B1BA5C;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        }
+        
+     #style{
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+        border: none;
+        cursor: pointer;
+     }
+     #style::-webkit-color-swatch {
+        border-radius: 50%;
+        border: 10px solid rgb(238, 236, 236);
+     }
+     #style::-moz-color-swatch {
+        border-radius: 50%;
+        border: 10px solid rgb(238, 236, 236);;
+     }
+     .slider {
+        box-shadow: 10px 5px 5px rgb(0, 0, 0);
+        appearance: none; 
+        width: 150px; 
+        height: 15px; 
+        background: #f7ddd6 ; 
+        border-radius: 12px; 
+        cursor: pointer;
+    }
+    input[type='color'] {
+        border-radius: 50%;
+        
+        
+    }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teplica</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+</head>
+<body class="root">
+    <header class="header">
+        <h1 class="title">Умная теплица</h1>
+    </header>
+    <section class="rules">
+    <div class="temp">
+        <h2 class="temp__title">Температура</h2>
+        <div class="indtemp"></div> 
+    </div>
+    <div class="wet">
+        <h2 class="wet__title">Влажность</h2>
+        <div class="indwet"></div>
+    </div>
+    <div class="pump">
+        <h2 class="pump__title">Полив</h2>
+        <button id="button" class="button__pump" onclick="toggleLED()">ON</button>
+    </div>
+    <div class="light">
+        <h2 class="light__title">Освещение</h2>
+        <input type="range" min="0" max="100" value="50" oninput="rangeValue.innerText = this.value"  class="slider" id="trackbar" oninput="setBrightness()">
+        <h2 id="rangeValue">100</h2>
+    </div>
+    <div class="color">
+        <h2 class="color__title">Цвет</h2>
+     <input type="color" value="#43da86" id="style">
+    </div>
+    <div class="window" for="toggle">
+        <h2 class="window__title">Окно</h2>
+        <button id="button" class="button__window" onclick="toggleLED()">Open</button>
+    </div>
+
+</section>
+<script>
+    const addr = "http://192.168.174.99";
+    var ledState = false;
+    var ledBrightness = 0;
+    var button = document.getElementById('button');
+    var trackbar = document.getElementById('trackbar');
+
+    
+
+    async function toggleLED() {
+    try {
+
+        const response = await fetch(`${addr}/led?state=${(!ledState ? '1' : '0')}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    ledState = data.state;
+    button.innerText = 'LED: ' + (ledState ? 'ON':'OFF');
+    button.classList.toggle('on', ledState);
+    console.log(data);
+    //alert("Успешно");
+    }
+    catch (error) {
+        console.log(error);
+    }
+    }
+
+    function setBrightness() {
+        ledBrightness = trackbar.value;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', addr + '/brightness?value=' + ledBrightness, true);
+        xhr.send();
+    }
+    </script>
+</body>
+</html>
